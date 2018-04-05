@@ -1,58 +1,39 @@
 class ArrayBuddy {
-  private static int watch = 999;
 
-  public static int getWatch() {
-    return watch;
+  public ArrayBuddy(int[] array1) {
+    myArray = array1;
   }
-
-  public static void setWatch(int watch) {
-    ArrayBuddy.watch = watch;
-  }
-
- 
 
   public static int getTotalSum() {
     int i = 0;
-    int length = array.length;
+    int length = myArray.length;
     int totalSum = 0;
     while (i < length) {
-      totalSum += array[i];
+      totalSum += myArray[i];
       i++;
     }
     return totalSum;
   }
 
-  private static int indexVal = 999;
-
-  public static int getIndexVal() {
-    return indexVal;
-  }
-
-  public static void setIndexVal(int indexVal) {
-    ArrayBuddy.indexVal = indexVal;
-  }
-
-  private static int[] array;
-
-  public ArrayBuddy(int[] Array) {
-    array = Array;
-  }
+  private static int[] myArray;
 
   public int smallestValue() {
-    for (int i = 0; i < array.length; i++) {
-      if (array[i] < watch) {
-        watch = array[i];
+    int smallestValue = myArray[0];
+    for (int i = 0; i < myArray.length; i++) {
+      if (myArray[i] < smallestValue) {
+        smallestValue = myArray[i];
       }
     }
-    return getWatch();
+    return smallestValue;
   }
-  public int indexOf(int value) {
-    for (int index : array) {
-      if (value == array[index]) {
-        indexVal = array[index];
+
+  public int find(int value) {
+    for (int i = 0; i < myArray.length; i++) {
+      if (value == myArray[i]) {
+        return i;
       }
     }
-    return ArrayBuddy.indexVal;
+    return -1;
   }
 
 }

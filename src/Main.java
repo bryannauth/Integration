@@ -65,11 +65,11 @@ public class Main {
     int[] tmpArray = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
     ArrayBuddy ab = new ArrayBuddy(tmpArray);
-    System.out.println("The sum of the array is " + ab.arraySum() + ".");
+    System.out.println("The sum of the array is " + ab.getTotalSum() + ".");
     System.out.println(
         "The smallest value in the array is " + ab.smallestValue() + ".");
     System.out
-        .println("The ninth number in the array is " + ab.indexOf(8) + ".");
+        .println("The number 8 can be found in the array at index " + ab.find(8) + ".");
 
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < 10; i++) {
