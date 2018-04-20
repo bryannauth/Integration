@@ -28,7 +28,7 @@ public class NavigationGame {
   public void move(String Direction) {
     switch (Direction) {
       case "UP":
-        if (playerX != 0)
+       // if (playerX != 0)
           playerX -= 1;
         if (playerX == randX && playerY == randY) {
           play = false;
@@ -36,7 +36,7 @@ public class NavigationGame {
         break;
 
       case "DOWN":
-        if (playerX != 3)
+        //if (playerX != 3)
           playerX += 1;
         if (playerX == randX && playerY == randY) {
           play = false;
@@ -44,7 +44,7 @@ public class NavigationGame {
         break;
 
       case "LEFT":
-        if (playerY != 0)
+        //if (playerY != 0)
           playerY -= 1;
         if (playerX == randX && playerY == randY) {
           play = false;
@@ -52,7 +52,7 @@ public class NavigationGame {
         break;
 
       case "RIGHT":
-        if (playerY != 3)
+        //if (playerY != 3)
           playerY += 1;
         if (playerX == randX && playerY == randY) {
           play = false;
@@ -77,7 +77,23 @@ public class NavigationGame {
     }
     System.out
         .println("Move P to the X with the directions: up, down, left, right.");
+    try {
     board[playerX][playerY] = "P";
+    }
+    catch(ArrayIndexOutOfBoundsException e)
+    {
+      System.out.println("You tried moving the player off the grid!");
+      if(playerX < 0)
+        playerX = 0;
+      else if (playerX > 3)
+        playerX = 3;
+      
+      if(playerY < 0)
+        playerY = 0;
+      else if (playerY > 3)
+        playerY = 3;
+      board[playerX][playerY] = "P";
+    }
     board[randX][randY] = "X";
     System.out.println(board[0][0] + board[0][1] + board[0][2] + board[0][3]);
     System.out.println(board[1][0] + board[1][1] + board[1][2] + board[1][3]);

@@ -1,3 +1,4 @@
+//parent class
 public class Automobile {
   private int wheels = 4;
   private String color;
@@ -10,6 +11,7 @@ public class Automobile {
   public void whatAmI() {
     System.out.println("I am a " + String.valueOf(wheels) + " wheeled " + color
         + " automobile");
+     //overriding into Truck and Motorcycle (polymorphism)
   }
 
   public void setWheels(int wheels) {

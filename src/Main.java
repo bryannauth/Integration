@@ -3,6 +3,12 @@
 //My Project
 
 import java.util.Scanner;
+import java.util.function.Predicate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
+
 
 public class Main {
 
@@ -16,10 +22,12 @@ public class Main {
     return number;
   }
 
+  private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); 
+
   public static void main(String[] args) {
 
     System.out.println(
-        "Hello! Thank you for choosing Bryan's Metric/Imperial Converter, Array Buddy, and Navigation Game!");
+        "Hello! Thank you for choosing Bryan's Metric/Imperial Converter, Array Buddy, Navigation Game, and more!");
 
     //// in java a variable is a placeholder for something else
     // Byte: 8 bit -128-127
@@ -32,6 +40,8 @@ public class Main {
     // Char: 16 unicode
     // String: character strings
     // Default= 0/null/false
+    LocalDateTime now = LocalDateTime.now();
+    System.out.println(dtf.format(now));    
     Scanner reader = new Scanner(System.in);
     System.out.println("Please type 'in' to convert from inches or 'cm' to "
         + "convert from centimeters");
@@ -97,6 +107,19 @@ public class Main {
     Motorcycle m = new Motorcycle("Blue");
     m.whatAmI();
 
-  }
+    
+    System.out.println("How old are you?");
+    int age = reader.nextInt();
+    Predicate<Integer> predicateTest = testInt -> {
+      return (testInt >= 18) && (testInt < 65);
+    };
+    //Predicate Lambda expression that tests if the user is part of the workforce or not by age (according to the US definition of working age)
+    
+    if (predicateTest.test(age)) {
+      System.out.println("You should be working");
+    } else {
+      System.out.println("You don't need to be working");
+    }
 
+  }
 }
