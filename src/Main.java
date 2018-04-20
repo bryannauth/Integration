@@ -65,7 +65,7 @@ public class Main {
     int[] tmpArray = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
     ArrayBuddy ab = new ArrayBuddy(tmpArray);
-    System.out.println("The sum of the array is " + ab.getTotalSum() + ".");
+    System.out.println("The sum of the array is " + ArrayBuddy.getTotalSum() + ".");
     System.out.println(
         "The smallest value in the array is " + ab.smallestValue() + ".");
     System.out
