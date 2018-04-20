@@ -18,7 +18,8 @@ public class Main {
 
   public static void main(String[] args) {
 
-    System.out.println("Hello! Thank you for choosing Bryan's Converter");
+    System.out.println(
+        "Hello! Thank you for choosing Bryan's Metric/Imperial Converter, Array Buddy, and Navigation Game!");
 
     //// in java a variable is a placeholder for something else
     // Byte: 8 bit -128-127
@@ -65,11 +66,12 @@ public class Main {
     int[] tmpArray = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
     ArrayBuddy ab = new ArrayBuddy(tmpArray);
-    System.out.println("The sum of the array is " + ArrayBuddy.getTotalSum() + ".");
+    System.out
+        .println("The sum of the array is " + ArrayBuddy.getTotalSum() + ".");
     System.out.println(
         "The smallest value in the array is " + ab.smallestValue() + ".");
-    System.out
-        .println("The number 8 can be found in the array at index " + ab.find(8) + ".");
+    System.out.println(
+        "The number 8 can be found in the array at index " + ab.find(8) + ".");
 
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < 10; i++) {
@@ -78,6 +80,22 @@ public class Main {
     sb.reverse();
     String sbString = sb.toString();
     System.out.println("Our array reversed is: " + sbString + ".");
+
+    NavigationGame ng = new NavigationGame();
+
+    while (ng.isPlay()) {
+      ng.display();
+      String move = reader.next();
+      move = move.toUpperCase();
+      ng.move(move);
+    }
+    System.out.println("Congratulations! You've completed the game!");
+    Automobile a = new Automobile("Silver");
+    a.whatAmI();
+    Truck t = new Truck("Red");
+    t.whatAmI();
+    Motorcycle m = new Motorcycle("Blue");
+    m.whatAmI();
 
   }
 
