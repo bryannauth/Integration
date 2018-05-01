@@ -1,3 +1,7 @@
+
+//Bryan Nauth
+//Array for PSI 2
+
 class ArrayBuddy {
 
   public ArrayBuddy(int[] array1) {
